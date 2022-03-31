@@ -1,0 +1,40 @@
+@startuml
+
+interface Iterable<Book> {
+    abstract iterator()
+}
+
+interface Iterator<Book> {
+    abstract next()
+    abstract hasNext()
+}
+
+class Book {
+    name
+    getName()
+}
+
+class BookShelf {
+    books
+    last
+    getBookAt()
+    appendBook()
+    getLength()
+    iterator()
+}
+
+class BookShelfIterator {
+    bookshelf
+    index
+
+    hasNext()
+    next()
+}
+
+Iterable <|.. BookShelf
+Iterator <|.. BookShelfIterator
+Iterable -- Iterator : create >
+BookShelf o-- Book
+BookShelfIterator o-- BookShelf
+
+@enduml
