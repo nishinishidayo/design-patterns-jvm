@@ -4,11 +4,12 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        BookShelf bookShelf = new BookShelf(4);
+        BookShelf bookShelf = new BookShelf();
         bookShelf.appendBook(new Book("Around the World in 80 Days"));
         bookShelf.appendBook(new Book("Bible"));
         bookShelf.appendBook(new Book("Cinderella"));
         bookShelf.appendBook(new Book("Daddy-Long-Legs"));
+        bookShelf.appendBook(new Book("E"));
 
         // 明示的にIteratorを使う方法
         Iterator<Book> it = bookShelf.iterator();
